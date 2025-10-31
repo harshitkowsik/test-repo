@@ -168,17 +168,17 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({
               </label>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <button
                 type="button"
                 onClick={() => handleNavigation("courses")}
-                className="rounded-button whitespace-nowrap cursor-pointer flex-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white py-3 font-semibold transition-colors duration-300"
+                className="rounded-button whitespace-nowrap cursor-pointer w-full md:flex-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white py-3 font-semibold transition-colors duration-300"
               >
                 Back to Courses
               </button>
               <button
                 type="submit"
-                className="rounded-button whitespace-nowrap cursor-pointer flex-1 bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300"
+                className="rounded-button whitespace-nowrap cursor-pointer w-full md:flex-1 bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300"
               >
                 Complete Registration
               </button>
