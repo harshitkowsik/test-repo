@@ -60,6 +60,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-indigo-500',
         description: 'Comprehensive professional training designed to develop research, manufacturing, and clinical practice skills in pharmacy students.',
         details: ['Industry-oriented laboratory sessions', 'Corporate visit and live company exposure', 'Placement preparation and guidance', 'End-to-end career support and job assistance'],
+        imageUrl: 'https://picsum.photos/seed/bpharm/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'pharma',
@@ -69,6 +71,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-teal-500',
         description: 'Practical diploma-focused sessions emphasizing pharmaceutical formulation, dispensing, and healthcare industry readiness.',
         details: ['On-ground pharmacy practice training', 'Hospital and company field visits', 'Soft skills and resume building support', 'Placement mentoring and interview preparation'],
+        imageUrl: 'https://picsum.photos/seed/dpharm/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'pharma',
@@ -78,6 +82,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-purple-600',
         description: 'Advanced program connecting research expertise with real-world pharmaceutical industry experience and placement support.',
         details: ['Research and analytical skill development', 'Industry collaborations and lab immersion', 'Professional networking and workshops', 'Final phase placement and recruitment drives'],
+        imageUrl: 'https://picsum.photos/seed/mpharm/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     // Language Courses
     {
@@ -88,6 +94,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: 'Master English with comprehensive grammar, vocabulary, and conversation skills.',
         details: ['IELTS/TOEFL preparation', 'Business English communication', 'Interactive speaking sessions', 'Writing and grammar mastery'],
+        imageUrl: 'https://picsum.photos/seed/english/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'language',
@@ -97,6 +105,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-red-500',
         description: 'Master the art of expression and confidence through engaging sessions.',
         details: ['Story crafting and narrative design', 'Stage performance and articulation', 'Speech structure and delivery', 'Real-world communication practice'],
+        imageUrl: 'https://picsum.photos/seed/writing/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'language',
@@ -106,6 +116,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-500',
         description: 'Explore the richness of local languages and traditions through immersive learning experiences.',
         details: ['Native pronunciation and expressions', 'Folk stories and oral heritage', 'Cultural customs and practices', 'Interactive speaking sessions'],
+        imageUrl: 'https://picsum.photos/seed/dialect/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     // Academic Courses
     {
@@ -116,6 +128,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-500',
         description: 'Strengthen your mathematical foundation from algebra to calculus.',
         details: ['Algebra and geometry mastery', 'Calculus and statistics', 'Problem-solving techniques', 'Exam preparation support'],
+        imageUrl: 'https://picsum.photos/seed/math/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'academics',
@@ -125,6 +139,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-purple-500',
         description: 'Explore physics, chemistry, and biology with hands-on experiments.',
         details: ['Laboratory experiments', 'Scientific method application', 'Research and analysis skills', 'STEM career preparation'],
+        imageUrl: 'https://picsum.photos/seed/science/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'academics',
@@ -134,6 +150,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-indigo-500',
         description: 'Develop critical thinking and writing skills through literature analysis.',
         details: ['Creative and academic writing', 'Literary analysis techniques', 'Research methodology', 'Public speaking and presentation'],
+        imageUrl: 'https://picsum.photos/seed/literature/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     // Digital Skills & Tech
     {
@@ -144,6 +162,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: 'Build modern websites and web applications with cutting-edge technologies.',
         details: ['HTML, CSS, JavaScript mastery', 'React and Node.js development', 'Database design and integration', 'Portfolio project creation'],
+        imageUrl: 'https://picsum.photos/seed/webdev/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'tech',
@@ -153,6 +173,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-600',
         description: 'Master data analysis tools and techniques for informed decision making.',
         details: ['Python and R programming', 'Statistical analysis methods', 'Data visualization tools', 'Machine learning basics'],
+        imageUrl: 'https://picsum.photos/seed/data/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'tech',
@@ -162,6 +184,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-red-500',
         description: 'Protect digital assets with comprehensive cybersecurity knowledge.',
         details: ['Network security fundamentals', 'Ethical hacking techniques', 'Risk assessment and management', 'Industry certification prep'],
+        imageUrl: 'https://picsum.photos/seed/cybersecurity/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     // Professional & Job-Oriented
     {
@@ -172,6 +196,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-pink-500',
         description: 'Master modern marketing strategies and grow your business online.',
         details: ['Social media marketing', 'SEO and content strategy', 'Google Ads and analytics', 'Email marketing campaigns'],
+        imageUrl: 'https://picsum.photos/seed/marketing/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'professional',
@@ -181,6 +207,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-500',
         description: 'Lead successful projects with proven methodologies and tools.',
         details: ['Agile and Scrum frameworks', 'Risk management strategies', 'Team leadership skills', 'PMP certification preparation'],
+        imageUrl: 'https://picsum.photos/seed/project/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
         category: 'professional',
@@ -190,5 +218,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-500',
         description: 'Enhance your professional communication and presentation skills.',
         details: ['Public speaking confidence', 'Business writing excellence', 'Negotiation techniques', 'Cross-cultural communication'],
+        imageUrl: 'https://picsum.photos/seed/communication/400/250',
+        brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
 ];

@@ -2,10 +2,21 @@ import React, { useEffect } from 'react';
 import { Page } from '../types';
 
 interface HomePageProps {
-  handleNavigation: (page: Page) => void;
+  handleNavigation: (page: Page, anchor?: string) => void;
 }
 
 const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
+  const galleryImages = [
+    { src: 'https://picsum.photos/seed/learnspire1/600/400', alt: 'Students collaborating in a modern classroom' },
+    { src: 'https://picsum.photos/seed/learnspire2/600/400', alt: 'A student using a laptop for e-learning' },
+    { src: 'https://picsum.photos/seed/learnspire3/600/400', alt: 'Science lab with modern equipment' },
+    { src: 'https://picsum.photos/seed/learnspire4/600/400', alt: 'Library with a vast collection of books' },
+    { src: 'https://picsum.photos/seed/learnspire5/600/400', alt: 'An instructor mentoring a student' },
+    { src: 'https://picsum.photos/seed/learnspire6/600/400', alt: 'Students engaged in a group discussion' },
+    { src: 'https://picsum.photos/seed/learnspire7/600/400', alt: 'Outdoor campus view' },
+    { src: 'https://picsum.photos/seed/learnspire8/600/400', alt: 'A student receiving a certificate' },
+  ];
+  
   useEffect(() => {
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
 
@@ -14,7 +25,6 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const el = entry.target as HTMLElement;
-            // add visible classes and remove initial hidden transform
             el.classList.add('opacity-100', 'translate-y-0');
             el.classList.remove('opacity-0', 'translate-y-6');
             obs.unobserve(entry.target);
@@ -22,7 +32,8 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
         });
       },
       {
-        threshold: 0.15,
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
       }
     );
 
@@ -31,7 +42,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="min-h-screen">
+    <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section
         className="relative h-screen flex items-center justify-center text-white overflow-hidden"
@@ -318,6 +329,40 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
         </div>
       </section>
 
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 px-6">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+              Glimpses of LearnSpire
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              A vibrant and engaging learning environment designed for success.
+            </p>
+          </div>
+          <div
+            className="relative w-full overflow-hidden 
+                       before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
+                       after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
+          >
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+              {[...galleryImages, ...galleryImages].map((img, index) => (
+                <div key={index} className="w-80 md:w-96 h-56 md:h-64 mx-4 flex-shrink-0">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6">
@@ -379,7 +424,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
               placeholder="Enter your email address"
               className="flex-1 px-4 py-3 rounded-lg border-none focus:outline-none text-gray-900 dark:bg-gray-800 bright:text-white dark:placeholder-gray-400"
             />
-            <button className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-r-lg font-semibold transition-colors duration-300">
+            <button className="ml-2 rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-r-lg font-semibold transition-colors duration-300 md: w-auto mt-2">
               Subscribe
             </button>
           </div>
