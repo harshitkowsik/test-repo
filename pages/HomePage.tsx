@@ -136,7 +136,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation }) => {
                 Gain practical experience and job-ready skills through pharma training and placement.
               </p>
               <button
-                onClick={() => handleNavigation("pharma")}
+                onClick={() => handleNavigation("courses")}
                 className="rounded-button whitespace-nowrap cursor-pointer text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold"
               >
                 Learn More <i className="fas fa-arrow-right ml-2"></i>
