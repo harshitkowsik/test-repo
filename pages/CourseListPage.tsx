@@ -46,7 +46,7 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
         <div className="mb-12">
             <button
                 onClick={() => handleNavigation('courses')}
-                className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold mb-8 flex items-center"
+                className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold mb-8 flex items-center md: mt-10 "
             >
                 <i className="fas fa-arrow-left mr-2"></i>
                 Back to Categories
