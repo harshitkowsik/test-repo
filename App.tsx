@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Page, FormDataState, Theme, CourseCategory } from './types';
 import Navbar from './components/Navbar';
@@ -110,7 +111,7 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return <HomePage handleNavigation={handleNavigation} />;
+        return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />;
       case "courses":
         return <CoursesPage handleCategorySelect={handleCategorySelect} />;
       case "courseList":
@@ -133,11 +134,11 @@ const App: React.FC = () => {
       case "feedback":
         return <FeedbackPage />;
       case "about":
-         return <HomePage handleNavigation={handleNavigation} />;
+         return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />;
       case "contact":
          return <ContactPage />;
       default:
-        return <HomePage handleNavigation={handleNavigation} />;
+        return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect}/>;
     }
   };
 
@@ -151,8 +152,9 @@ const App: React.FC = () => {
         `}
       </style>
       <Navbar currentPage={currentPage} handleNavigation={handleNavigation} theme={theme} setTheme={setTheme} />
-      <main>{renderPage()}</main>
-      <Footer handleNavigation={handleNavigation} />
+      <main className="pt-16">{/* Add padding top to account for fixed navbar */}</main>
+      {renderPage()}
+      <Footer handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />
     </div>
   );
 };

@@ -55,27 +55,6 @@ const FeedbackPage: React.FC = () => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    Course Taken
-                                </label>
-                                <select className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 transition-colors duration-300 text-sm">
-                                    <option value="">Select a course (optional)</option>
-                                    <option value="english">English Proficiency</option>
-                                    <option value="spanish">Creative Writing & Public Speaking</option>
-                                    <option value="mandarin">Regional Dialect</option>
-                                    <option value="math">Advanced Mathematics</option>
-                                    <option value="science">Science Fundamentals</option>
-                                    <option value="literature">Literature & Writing</option>
-                                    <option value="webdev">Web Development</option>
-                                    <option value="data">Data Analytics</option>
-                                    <option value="cyber">Cybersecurity</option>
-                                    <option value="marketing">Digital Marketing</option>
-                                    <option value="project">Project Management</option>
-                                    <option value="communication">Business Communication</option>
-                                </select>
-                            </div>
-
-                            <div>
                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
                                     Overall Rating *
                                 </label>

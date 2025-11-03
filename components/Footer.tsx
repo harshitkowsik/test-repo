@@ -1,16 +1,17 @@
+
 import React from 'react';
-import { Page } from '../types';
+import { Page, CourseCategory } from '../types';
 
 interface FooterProps {
-  // allow optional anchor param to remain compatible with App.handleNavigation
   handleNavigation: (page: Page, anchor?: string) => void;
+  handleCategorySelect: (category: CourseCategory) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ handleNavigation }) => {
+const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect }) => {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
               LearnSpire
@@ -31,42 +32,34 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation }) => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation('courses')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
+                  onClick={() => handleCategorySelect('training_placement')}
+                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
                 >
-                  Training & Placement in Pharma
+                  Training & Placement
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('courses')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
+                  onClick={() => handleCategorySelect('professional')}
+                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
                 >
-                  Language Courses
+                  Professional & Job-Oriented
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('courses')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
+                  onClick={() => handleCategorySelect('academics')}
+                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
                 >
                   Academic Courses
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('courses')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
+                  onClick={() => handleCategorySelect('language')}
+                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
                 >
-                  Digital Skills & Tech
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation('courses')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
-                >
-                  Professional & Job-Oriented
+                  Language Courses
                 </button>
               </li>
             </ul>
@@ -139,10 +132,6 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation }) => {
                   hr@learnspire.org
                 </a>
               </div>
-              {/* <div className="flex items-center">
-                <i className="fas fa-phone text-green-400 mr-3"></i>
-                <span className="text-gray-400">+1 (555) 123-4567</span>
-              </div> */}
               <div className="flex items-center">
                 <i className="fas fa-map-marker-alt text-green-400 mr-3"></i>
                 <span className="text-gray-400">
@@ -153,7 +142,7 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation }) => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm">
             © 2024 LearnSpire. All rights reserved. | Privacy Policy | Terms
             of Service
           </p>
