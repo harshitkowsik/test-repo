@@ -380,9 +380,9 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             </p>
           </div>
           <div
-            className="relative w-full overflow-hidden 
-                       before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
-                       after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
+            className="relative w-full overflow-hidden
+                       before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-12 md:before:w-16 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
+                       after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-12 md:after:w-16 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
           >
             <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
               {[...galleryImages, ...galleryImages].map((img, index) => (
