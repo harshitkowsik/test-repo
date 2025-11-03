@@ -258,7 +258,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                   </p>
                   <button
                     onClick={() => handleCategorySelect(category.id)}
-                    className={`rounded-button whitespace-nowrap cursor-pointer ${buttonColors} font-semibold mt-auto`}
+                    className={`rounded-button whitespace-nowrap cursor-pointer ${buttonColors} font-semibold mt-auto self-start`}
                   >
                     Learn More <i className="fas fa-arrow-right ml-2"></i>
                   </button>
