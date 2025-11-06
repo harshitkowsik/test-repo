@@ -11,7 +11,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, setTheme }) => {
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900/80 shadow-lg dark:border-b dark:border-gray-800 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900/80 shadow-lg dark:border-b dark:border-gray z-50">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <div
