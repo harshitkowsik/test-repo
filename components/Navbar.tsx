@@ -4,7 +4,6 @@ import ThemeSwitcher from './ThemeSwitcher';
 
 interface NavbarProps {
   currentPage: Page;
-  // accept optional anchor so callers can scroll to sections on the home page
   handleNavigation: (page: Page, anchor?: string) => void;
   theme: Theme;
   setTheme: (theme: Theme) => void;
@@ -20,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, s
             onClick={() => handleNavigation("home")}
           >
             <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-              LearnSpire
+             <img src="/learnspire-logo.jpg" alt="Vidyate Logo" className="h-11 rounded" />
             </span>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
