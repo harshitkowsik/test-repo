@@ -1,4 +1,4 @@
-export type Page = "home" | "courses" | "courseList" | "registration" | "feedback" | "about" | "contact";
+export type Page = "home" | "courses" | "courseList" | "registration" | "feedback" | "about" | "contact" | "terms" | "privacy";
 export type Theme = "light" | "dark" | "system";
 export type CourseCategory = 'training_placement' | 'professional' | 'academics' | 'competitive_exams' | 'entrance_exams' | 'language';
 

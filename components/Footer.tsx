@@ -143,8 +143,18 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect 
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 LearnSpire. All rights reserved. | Privacy Policy | Terms
-            of Service
+            © 2024 LearnSpire. All rights reserved. |{" "}
+            <button
+              onClick={() => handleNavigation("privacy")}
+              className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+            >
+              Privacy Policy
+            </button>{" "}
+            |{" "}
+            <button
+              onClick={() => handleNavigation("terms")}
+              className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+            >Terms of Service</button>
           </p>
         </div>
       </div>

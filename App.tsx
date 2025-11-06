@@ -9,6 +9,8 @@ import RegistrationPage from './pages/RegistrationPage';
 import FeedbackPage from './pages/FeedbackPage';
 import CourseListPage from './pages/CourseListPage';
 import ContactPage from './pages/ContactPage';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage.tsx';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -137,6 +139,10 @@ const App: React.FC = () => {
          return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />;
       case "contact":
          return <ContactPage />;
+      case "terms":
+        return <TermsAndConditionsPage />;
+      case "privacy":
+        return <PrivacyPolicyPage />;
       default:
         return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect}/>;
     }
