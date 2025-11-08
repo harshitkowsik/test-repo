@@ -1,10 +1,53 @@
+
 import React, { useState } from 'react';
 
 const FeedbackPage: React.FC = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        likeMost: '',
+        improvement: '',
+    });
     const [rating, setRating] = useState(0);
+    const [status, setStatus] = useState('');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus('Submitting...');
+
+        const data = {
+            ...formData,
+            rating,
+            access_key: "39612588-ec1c-45e6-b7c7-a4b774ba4a72",
+            from_name: "LearnSpire Feedback",
+            subject: "Learnspire - Feedback Submission",
+        };
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
+
+        if (res.success) {
+            setStatus('Thank you for your feedback!');
+            setFormData({ name: '', phone: '', email: '', likeMost: '', improvement: '' });
+            setRating(0);
+        } else {
+            setStatus('Something went wrong. Please try again.');
+        }
+    };
 
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
             <div className="container mx-auto px-6 py-12">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-12">
@@ -17,7 +60,7 @@ const FeedbackPage: React.FC = () => {
                     </div>
 
                     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid md:grid-cols-1 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -25,7 +68,10 @@ const FeedbackPage: React.FC = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name="name"
                                         className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 dark:placeholder-gray-400 transition-colors duration-300 text-sm"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
                                         required
                                     />
                                 </div>
@@ -38,7 +84,10 @@ const FeedbackPage: React.FC = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name="phone"
                                         className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 dark:placeholder-gray-400 transition-colors duration-300 text-sm"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
                                         required
                                     />
                                 </div>
@@ -48,7 +97,10 @@ const FeedbackPage: React.FC = () => {
                                     </label>
                                     <input
                                         type="email"
+                                        name="email"
                                         className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 dark:placeholder-gray-400 transition-colors duration-300 text-sm"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
                                         required
                                     />
                                 </div>
@@ -79,8 +131,11 @@ const FeedbackPage: React.FC = () => {
                                 </label>
                                 <textarea
                                     rows={4}
+                                    name="likeMost"
                                     className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 dark:placeholder-gray-400 transition-colors duration-300 text-sm"
                                     placeholder="Share what you enjoyed about your learning experience..."
+                                    value={formData.likeMost}
+                                    onChange={handleInputChange}
                                 ></textarea>
                             </div>
 
@@ -90,55 +145,22 @@ const FeedbackPage: React.FC = () => {
                                 </label>
                                 <textarea
                                     rows={4}
+                                    name="improvement"
                                     className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 dark:placeholder-gray-400 transition-colors duration-300 text-sm"
                                     placeholder="Suggest improvements or share any concerns..."
+                                    value={formData.improvement}
+                                    onChange={handleInputChange}
                                 ></textarea>
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    Would you recommend LearnSpire to others? *
-                                </label>
-                                <div className="space-y-2">
-                                    <label className="flex items-center">
-                                        <input
-                                            type="radio"
-                                            name="recommend"
-                                            value="yes"
-                                            className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500 dark:bg-gray-700 dark:border-gray-500"
-                                            required
-                                        />
-                                        <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-                                            Yes, definitely
-                                        </span>
-                                    </label>
-                                    <label className="flex items-center">
-                                        <input
-                                            type="radio"
-                                            name="recommend"
-                                            value="maybe"
-                                            className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500 dark:bg-gray-700 dark:border-gray-500"
-                                        />
-                                        <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">Maybe</span>
-                                    </label>
-                                    <label className="flex items-center">
-                                        <input
-                                            type="radio"
-                                            name="recommend"
-                                            value="no"
-                                            className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500 dark:bg-gray-700 dark:border-gray-500"
-                                        />
-                                        <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">No</span>
-                                    </label>
-                                </div>
                             </div>
 
                             <button
                                 type="submit"
-                                className="rounded-button whitespace-nowrap cursor-pointer w-full bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300"
+                                className="rounded-button whitespace-nowrap cursor-pointer w-full bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300 disabled:bg-gray-400"
+                                disabled={status === 'Submitting...'}
                             >
-                                Submit Feedback
+                                {status === 'Submitting...' ? 'Submitting...' : 'Submit Feedback'}
                             </button>
+                            {status && <p className={`text-center text-sm mt-4 ${status.includes('wrong') ? 'text-red-500' : 'text-green-500'}`}>{status}</p>}
                         </form>
                     </div>
                 </div>

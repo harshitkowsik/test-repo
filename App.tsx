@@ -157,6 +157,7 @@ const App: React.FC = () => {
           }
         `}
       </style>
+
       <Navbar currentPage={currentPage} handleNavigation={handleNavigation} theme={theme} setTheme={setTheme} />
       <main className="pt-16">{/* Add padding top to account for fixed navbar */}</main>
       {renderPage()}

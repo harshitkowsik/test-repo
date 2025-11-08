@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface BrochureModalProps {
   isOpen: boolean;
@@ -11,16 +11,49 @@ interface BrochureModalProps {
 }
 
 const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, course }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [status, setStatus] = useState('');
+
   if (!isOpen) {
     return null;
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real app, you would handle form submission to a server here.
-    // For this example, we just redirect.
-    window.open(course.brochureLink, '_blank');
-    onClose();
+    setStatus('Submitting...');
+
+    const data = {
+      ...formData,
+      courseName: course.title,
+      access_key: "befb3eb2-1b28-466f-b4fc-785e8c01cb91",
+      from_name: "LearnSpire Brochure",
+      subject: `Learnspire - Brochure Download for ${course.title}`,
+    };
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    }).then((res) => res.json());
+
+    if (res.success) {
+        setStatus('Thank you! The brochure will open in a new tab.');
+        window.open(course.brochureLink, '_blank');
+        setTimeout(() => onClose(), 2000); // Close modal after a delay
+    } else {
+        setStatus('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -58,6 +91,8 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, course }
               id="name"
               name="name"
               className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 transition-colors duration-300 text-sm"
+              value={formData.name}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -70,6 +105,8 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, course }
               id="email"
               name="email"
               className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 transition-colors duration-300 text-sm"
+              value={formData.email}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -82,15 +119,19 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, course }
               id="phone"
               name="phone"
               className="w-full px-4 py-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 dark:focus:border-green-500 transition-colors duration-300 text-sm"
+              value={formData.phone}
+              onChange={handleInputChange}
               required
             />
           </div>
           <button
             type="submit"
-            className="rounded-button whitespace-nowrap cursor-pointer w-full bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300 mt-4"
+            className="rounded-button whitespace-nowrap cursor-pointer w-full bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300 mt-4 disabled:bg-gray-400"
+            disabled={status === 'Submitting...'}
           >
-            Download Now
+            {status === 'Submitting...' ? 'Submitting...' : 'Download Now'}
           </button>
+          {status && <p className={`text-center text-sm mt-2 ${status.includes('wrong') ? 'text-red-500' : 'text-green-500'}`}>{status}</p>}
         </form>
       </div>
     </div>

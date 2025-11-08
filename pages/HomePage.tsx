@@ -449,3 +449,5 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
 };
 
 export default HomePage;
+
+
