@@ -13,7 +13,7 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage.tsx';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>(() => (window.location.hash.replace('#/', '') as Page) || 'home');
   const [selectedCourse, setSelectedCourse] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<CourseCategory | null>(null);
   const [formData, setFormData] = useState<FormDataState>({
@@ -55,6 +55,33 @@ const App: React.FC = () => {
   }, [theme]);
 
   useEffect(() => {
+    const getPageFromHash = (): Page => {
+      const hash = window.location.hash.replace('#/', '');
+      // A simple list of valid pages to avoid invalid hash values
+      const validPages: Page[] = ["home", "courses", "courseList", "registration", "feedback", "about", "contact", "terms", "privacy"];
+      if (validPages.includes(hash as Page)) {
+        return hash as Page;
+      }
+      return 'home';
+    };
+
+    const handleHashChange = () => {
+      setCurrentPage(getPageFromHash());
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Set initial page in case the hash is empty or invalid
+    if (!window.location.hash || getPageFromHash() === 'home') {
+      window.location.hash = '#/home';
+    }
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
     // Handle scrolling to anchor links
     if (currentPage === 'about') {
       const el = document.getElementById('about');
@@ -67,7 +94,7 @@ const App: React.FC = () => {
   }, [currentPage]);
 
   const handleNavigation = (page: Page, anchor?: string) => {
-    setCurrentPage(page);
+    window.location.hash = `#/${page}`;
   };
 
   const handleCategorySelect = (category: CourseCategory) => {
