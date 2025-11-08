@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Page, Theme } from '../types';
 import ThemeSwitcher from './ThemeSwitcher';
 
@@ -10,6 +10,20 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, setTheme }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-lg dark:border-b dark:border-gray-800 z-50">
       <div className="container mx-auto px-6">
@@ -55,13 +69,40 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, s
                 Feedback
               </button>
             </div>
-            <ThemeSwitcher theme={theme} setTheme={setTheme} />
-            <button
-              onClick={() => handleNavigation("courses")}
-              className="hidden sm:block rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-6 py-2 font-semibold transition-colors duration-300"
-            >
-              Get Started
-            </button>
+            <div className="flex items-center">
+              <ThemeSwitcher theme={theme} setTheme={setTheme} />
+              <button
+                onClick={() => handleNavigation("courses")}
+                className="hidden sm:block rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-6 py-2 font-semibold transition-colors duration-300"
+              >
+                Get Started
+              </button>
+              <div className="md:hidden" ref={menuRef}>
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Open menu"
+                >
+                  <i className="fas fa-bars text-xl"></i>
+                </button>
+                {isMenuOpen && (
+                  <div className="absolute right-4 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 py-2">
+                    <button onClick={() => { handleNavigation("home"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</button>
+                    <button onClick={() => { handleNavigation("courses"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Courses</button>
+                    <button onClick={() => { handleNavigation("contact"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</button>
+                    <button onClick={() => { handleNavigation("feedback"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Feedback</button>
+                    <button onClick={() => { handleNavigation("home", "about"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</button>
+                    <div className="border-t border-gray-200 dark:border-gray-700 my-2"></div>
+                    <button
+                      onClick={() => { handleNavigation("courses"); setIsMenuOpen(false); }}
+                      className="w-full text-left px-4 py-2 text-sm text-green-600 dark:text-green-400 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      Get Started
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
