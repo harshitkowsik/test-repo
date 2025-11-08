@@ -54,38 +54,20 @@ const App: React.FC = () => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
+  useEffect(() => {
+    // Handle scrolling to anchor links
+    if (currentPage === 'about') {
+      const el = document.getElementById('about');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentPage]);
+
   const handleNavigation = (page: Page, anchor?: string) => {
-    // If someone requests the about page, treat it as home + scroll to #about
-    if (page === 'about') {
-      setCurrentPage('home');
-      // scroll after render
-      setTimeout(() => {
-        const id = anchor || 'about';
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }, 60);
-      return;
-    }
-
     setCurrentPage(page);
-
-    // If navigating to home with an anchor, scroll to that section after render
-    if (page === 'home' && anchor) {
-      setTimeout(() => {
-        const el = document.getElementById(anchor);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 60);
-      return;
-    }
-
-    // default behavior: scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCategorySelect = (category: CourseCategory) => {

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+   <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-scroll {
+      animation: scroll 60s linear infinite;
+    }
+  </style>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/learnspire-favicon.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnSpire - Educational Platform</title>
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/assets/manifest-BCoI0Ofo.json" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="An innovative educational platform designed to inspire and empower learners of all ages.">
+  <meta name="keywords" content="learnspire.org, learnspire dehradun, learnspire india, education, learning, online courses, platform, learnspire, learners, teaching">
+  <meta name="author" content="LearnSpire">
+
+  <!-- Open Graph Meta Tags (for social media sharing) -->
+  <meta property="og:title" content="LearnSpire - Educational Platform">
+  <meta property="og:description" content="An innovative educational platform designed to inspire and empower learners of all ages.">
+  <meta property="og:image" content="https://learnspire.org/learnspire-logo.jpg">
+  <meta property="og:url" content="https://learnspire.org">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LearnSpire Educational Platform">
+  <meta name="twitter:description" content="An innovative educational platform designed to inspire and empower learners of all ages.">
+  <meta name="twitter:image" content="https://learnspire.org/learnspire-logo.jpg">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "LearnSpire",
+    "url": "https://learnspire.org",
+    "logo": "https://learnspire.org/learnspire-logo.jpg",
+    "description": "An innovative educational platform designed to inspire and empower learners of all ages with a wide range of courses.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dehradun",
+      "addressRegion": "UK",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "info@learnspire.org"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    // Set theme on page load to prevent flash of unstyled content
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/index.css">
+  <script type="module" crossorigin src="/assets/index-BELbvcLI.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
