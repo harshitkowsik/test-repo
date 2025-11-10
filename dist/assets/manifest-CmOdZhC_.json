@@ -1,0 +1,28 @@
+{
+  "name": "LearnSpire: Online Courses for Professional & Academic Education",
+  "short_name": "LearnSpire",
+  "description": "Explore top-rated online courses at LearnSpire, your premier destination for quality education. We offer professional training, academic tutoring, and expert exam coaching.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "/learnspire-favicon.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/learnspire-favicon.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/learnspire-favicon.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    }
+  ]
+}

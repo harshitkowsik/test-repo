@@ -2,36 +2,31 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/learnspire-favicon-nobg.png" />
+  <title>LearnSpire: Online Courses for Professional & Academic Education</title>
+  
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json" />
 
+  <!-- Google Fonts Preconnect and Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-scroll {
-      animation: scroll 60s linear infinite;
-    }
-  </style>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="/index.css">
 
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/learnspire-favicon.jpg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LearnSpire: Online Courses for Professional & Academic Education</title>
-
-  <!-- Web App Manifest -->
-  <link rel="manifest" href="/manifest.json" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Explore top-rated online courses at LearnSpire, your premier destination for quality education. We offer professional training, job-oriented skills, academic tutoring for classes 6-12, and expert coaching for competitive exams like UPSC, SSC, JEE, and NEET. Start your educational journey today!">
-  <meta name="keywords" content="online courses, education, professional training, academic tutoring, exam prep, UPSC, SSC, JEE, NEET, job-oriented courses, LearnSpire, online learning">
+  <meta name="keywords" content="learnspire india, learnspire academy, learnspire pvt ltd, learnspire dehradun, learnspire e learning, online courses, education, professional training, academic tutoring, exam prep, UPSC, SSC, JEE, NEET, job-oriented courses, LearnSpire, online learning">
   <meta name="author" content="LearnSpire">
 
   <!-- Open Graph Meta Tags (for social media sharing) -->
@@ -70,12 +65,15 @@
   }
   </script>
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
     }
   </script>
+
+  <!-- Theme Script -->
   <script>
     // Set theme on page load to prevent flash of unstyled content
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -84,10 +82,20 @@
       document.documentElement.classList.remove('dark')
     }
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/index.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-scroll {
+      animation: scroll 60s linear infinite;
+    }
+  </style>
 </head>
 
 <body>
