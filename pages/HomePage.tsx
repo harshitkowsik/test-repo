@@ -358,7 +358,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             <button
               onClick={() => handleNavigation('team')}
               className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-8 py-3 font-semibold text-lg transition-colors duration-300"
-              aria-label="View all team members"
+              aria-label="View all"
             >
               View All Team Members <i className="fas fa-users ml-2"></i>
             </button>
@@ -383,7 +383,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                        before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
                        after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
           >
-            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+            <div className="flex mb-5 w-max animate-scroll hover:[animation-play-state:paused]">
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div key={index} className="w-80 md:w-96 mx-4 flex-shrink-0 bg-white dark:bg-gray-700/50 p-8 rounded-lg shadow-lg">
                   <div className="flex items-center mb-4">
@@ -427,7 +427,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="pt-15 pb-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto">
           <div className="text-center mb-16 px-6">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
