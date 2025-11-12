@@ -56,20 +56,26 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, s
               >
                 Courses
               </button>
+               <button
+                onClick={() => handleNavigation("team")}
+                className={`cursor-pointer font-medium transition-colors duration-300 ${currentPage === "team" ? "text-green-600 dark:text-green-400" : "text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"}`}
+              >
+                Team
+              </button>
               <button
                 onClick={() => handleNavigation("contact")}
                 className={`cursor-pointer font-medium transition-colors duration-300 ${currentPage === "contact" ? "text-green-600 dark:text-green-400" : "text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"}`}
               >
                 Contact
               </button>
-              <button
+              {/* <button
                 onClick={() => handleNavigation("feedback")}
                 className={`cursor-pointer font-medium transition-colors duration-300 ${currentPage === "feedback" ? "text-green-600 dark:text-green-400" : "text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400"}`}
               >
                 Feedback
-              </button>
+              </button> */}
             </div>
-            <div className="flex items-center">
+            <div className="flex justify-center items-center space-x-0 md:space-x-2">
               <ThemeSwitcher theme={theme} setTheme={setTheme} />
               <button
                 onClick={() => handleNavigation("courses")}
@@ -89,6 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, handleNavigation, theme, s
                   <div className="absolute right-4 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 py-2">
                     <button onClick={() => { handleNavigation("home"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</button>
                     <button onClick={() => { handleNavigation("courses"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Courses</button>
+                     <button onClick={() => { handleNavigation("team"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Our Team</button>
                     <button onClick={() => { handleNavigation("contact"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</button>
                     <button onClick={() => { handleNavigation("feedback"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Feedback</button>
                     <button onClick={() => { handleNavigation("home", "about"); setIsMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</button>

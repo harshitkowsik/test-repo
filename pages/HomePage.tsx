@@ -2,6 +2,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Page, CourseCategory } from '../types';
 import { courseCategories } from '../data/courses';
+import { teamMembers } from '../data/teamData';
+import { testimonials } from '../data/testData';
+import { hiringPartners } from '../data/hiringPartners';
+import { galleryImages } from '../data/gallaryData';
 
 interface HomePageProps {
   handleNavigation: (page: Page, anchor?: string) => void;
@@ -63,16 +67,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
     setCurrentIndex(slideIndex);
   };
   
-  const galleryImages = [
-    { src: 'https://picsum.photos/seed/learnspire1/600/400', alt: 'Students collaborating in a modern classroom' },
-    { src: 'https://picsum.photos/seed/learnspire2/600/400', alt: 'A student using a laptop for e-learning' },
-    { src: 'https://picsum.photos/seed/learnspire3/600/400', alt: 'Science lab with modern equipment' },
-    { src: 'https://picsum.photos/seed/learnspire4/600/400', alt: 'Library with a vast collection of books' },
-    { src: 'https://picsum.photos/seed/learnspire5/600/400', alt: 'An instructor mentoring a student' },
-    { src: 'https://picsum.photos/seed/learnspire6/600/400', alt: 'Students engaged in a group discussion' },
-    { src: 'https://picsum.photos/seed/learnspire7/600/400', alt: 'Outdoor campus view' },
-    { src: 'https://picsum.photos/seed/learnspire8/600/400', alt: 'A student receiving a certificate' },
-  ];
+  
   
   useEffect(() => {
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
@@ -269,10 +264,113 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
         </div>
       </section>
 
-      {/* Testimonials Section */}
+
+      {/* Hiring Partners Section (New) */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 px-6">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+              Our Esteemed Hiring Partners
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              We collaborate with leading companies to ensure excellent placement opportunities for our students.
+            </p>
+          </div>
+          <div
+            className="relative w-full overflow-hidden 
+                       before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-white dark:before:from-gray-800 before:to-transparent before:content-['']
+                       after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-white dark:after:from-gray-800 after:to-transparent after:content-['']"
+          >
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center py-4">
+              {[...hiringPartners, ...hiringPartners].map((partner, index) => (
+                <div key={index} className="w-40 h-20 md:w-48 md:h-24 mx-6 flex-shrink-0 flex items-center justify-center">
+                  <img
+                    src={partner.imageUrl}
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Meet Our Team Section (New) */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+              Meet Our Expert Team
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Committed to your success, our team brings expertise and passion to education.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.slice(0, 4).map((member, index) => ( // Show first 3 team members
+              <div
+                key={index}
+                className="reveal bg-gray-50 dark:bg-gray-700/50 p-8 rounded-lg transition-all duration-500 ease-out opacity-0 translate-y-6 text-center flex flex-col items-center border border-transparent hover:border-green-500"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  className="w-32 h-32 rounded-full object-cover mb-4 border-2 border-gray-200 dark:border-gray-600"
+                  loading="lazy"
+                />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-green-600 dark:text-green-400 font-medium mb-3">
+                  {member.designation}
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm flex-grow">
+                  {member.bio}
+                </p>
+                <div className="flex space-x-4 mt-4">
+                  <a
+                    href={member.twitterUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 dark:text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                    aria-label={`Follow ${member.name} on Twitter`}
+                  >
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href={member.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300"
+                    aria-label={`Connect with ${member.name} on LinkedIn`}
+                  >
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => handleNavigation('team')}
+              className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-8 py-3 font-semibold text-lg transition-colors duration-300"
+              aria-label="View all team members"
+            >
+              View All Team Members <i className="fas fa-users ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 px-6">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               What Our Students Say
             </h2>
@@ -280,89 +378,49 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
               Hear from learners who transformed their careers with LearnSpire
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="reveal bg-gray-50 dark:bg-gray-700/50 p-8 rounded-lg transition-all duration-500 ease-out opacity-0 translate-y-6">
-              <div className="flex items-center mb-4">
-                <img
-                  src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
-                  alt="Gaurav Singh"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Gaurav Singh</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Digital Marketing Course
+          <div
+            className="relative w-full overflow-hidden 
+                       before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
+                       after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
+          >
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={index} className="w-80 md:w-96 mx-4 flex-shrink-0 bg-white dark:bg-gray-700/50 p-8 rounded-lg shadow-lg">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.imageUrl}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover mr-4"
+                      loading="lazy"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {testimonial.course}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+                    "{testimonial.description}"
                   </p>
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <i
+                        key={i}
+                        className={`fas fa-star ${
+                          i < testimonial.stars ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-500'
+                        } ${
+                          testimonial.stars % 1 !== 0 && i === Math.floor(testimonial.stars)
+                            ? 'fa-star-half-alt'
+                            : ''
+                        }`}
+                      ></i>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 italic">
-                "LearnSpire's digital marketing course completely changed my
-                career trajectory. The practical approach and expert guidance
-                helped me land my dream job!"
-              </p>
-              <div className="flex text-yellow-400 mt-4">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-            </div>
-            <div className="reveal bg-gray-50 dark:bg-gray-700/50 p-8 rounded-lg transition-all duration-500 ease-out opacity-0 translate-y-6" style={{transitionDelay: '100ms'}}>
-              <div className="flex items-center mb-4">
-                <img
-                  src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
-                  alt="Priya Jaiswal"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Priya Jaiswal</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Web Development Course
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 italic">
-                "The web development program at LearnSpire is outstanding. The
-                hands-on projects and mentorship made learning enjoyable and
-                effective."
-              </p>
-              <div className="flex text-yellow-400 mt-4">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </div>
-            </div>
-            <div className="reveal bg-gray-50 dark:bg-gray-700/50 p-8 rounded-lg transition-all duration-500 ease-out opacity-0 translate-y-6" style={{transitionDelay: '200ms'}}>
-              <div className="flex items-center mb-4">
-                <img
-                  src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
-                  alt="Ayush Gupta"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Ayush Gupta
-                  </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Data Analytics Course
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 italic">
-                "The Data Analytics program exceeded my expectations. The practical projects
-                and real-world datasets helped me transition
-                into a data analyst role at a new company."
-              </p>
-              <div className="flex text-yellow-400 mt-4">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star-half-alt"></i>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -449,5 +507,3 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
 };
 
 export default HomePage;
-
-

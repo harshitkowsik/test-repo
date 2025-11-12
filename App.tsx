@@ -11,6 +11,7 @@ import CourseListPage from './pages/CourseListPage';
 import ContactPage from './pages/ContactPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage.tsx';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx';
+import TeamPage from './pages/TeamPage.tsx';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>("home");
@@ -55,10 +56,8 @@ const App: React.FC = () => {
   }, [theme]);
 
   const handleNavigation = (page: Page, anchor?: string) => {
-    // If someone requests the about page, treat it as home + scroll to #about
     if (page === 'about') {
       setCurrentPage('home');
-      // scroll after render
       setTimeout(() => {
         const id = anchor || 'about';
         const el = document.getElementById(id);
@@ -73,7 +72,6 @@ const App: React.FC = () => {
 
     setCurrentPage(page);
 
-    // If navigating to home with an anchor, scroll to that section after render
     if (page === 'home' && anchor) {
       setTimeout(() => {
         const el = document.getElementById(anchor);
@@ -84,7 +82,6 @@ const App: React.FC = () => {
       return;
     }
 
-    // default behavior: scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -143,6 +140,8 @@ const App: React.FC = () => {
         return <TermsAndConditionsPage />;
       case "privacy":
         return <PrivacyPolicyPage />;
+      case "team":
+        return <TeamPage />;
       default:
         return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect}/>;
     }
