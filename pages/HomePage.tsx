@@ -360,7 +360,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
               className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-8 py-3 font-semibold text-lg transition-colors duration-300"
               aria-label="View all team members"
             >
-              View All <i className="fas fa-users ml-2"></i>
+              View All
             </button>
           </div>
         </div>
