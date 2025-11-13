@@ -116,7 +116,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
               <img
                 src={slide.image}
                 srcSet={`${slide.mobileImage} 800w, ${slide.image} 1440w`}
-                sizes="100vw"
+                sizes="(max-width: 767px) 100vw, 1440px"
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover cursor-pointer"
                 onClick={slide.action}
