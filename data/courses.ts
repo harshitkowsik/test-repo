@@ -60,7 +60,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-indigo-500',
         description: 'Comprehensive training for B.Pharm, M.Pharm and Biotechnology students with end-to-end placement support.',
         details: ['Industrial visits and placements', 'Company visits and exposure', 'Production, quality control, and R&D', 'Certification of completion'],
-        imageUrl: 'https://picsum.photos/seed/pharma-tp/400/250',
+        imageUrl: '/course-image/pharma-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -71,7 +71,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-teal-500',
         description: 'Bridge the gap between academic knowledge and industry demands with hands-on engineering training.',
         details: ['Live project experience', 'Specialized software training', 'Soft skills development', 'Recruitment drives with top companies'],
-        imageUrl: 'https://picsum.photos/seed/eng-tp/400/250',
+        imageUrl: '/course-image/engineering-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     
@@ -84,7 +84,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-pink-500',
         description: 'Master modern marketing strategies and grow your business online.',
         details: ['Social media marketing', 'SEO and content strategy', 'Google Ads and analytics', 'Email marketing campaigns'],
-        imageUrl: 'https://picsum.photos/seed/marketing/400/250',
+        imageUrl: '/course-image/digital-marketing-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -95,7 +95,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-500',
         description: 'Lead successful projects with proven methodologies and tools.',
         details: ['Agile and Scrum frameworks', 'Risk management strategies', 'Team leadership skills', 'PMP certification preparation'],
-        imageUrl: 'https://picsum.photos/seed/project/400/250',
+        imageUrl: '/course-image/project-management-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -106,7 +106,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-500',
         description: 'Enhance your professional communication and presentation skills.',
         details: ['Public speaking confidence', 'Business writing excellence', 'Negotiation techniques', 'Cross-cultural communication'],
-        imageUrl: 'https://picsum.photos/seed/communication/400/250',
+        imageUrl: '/course-image/business-communication-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -117,7 +117,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: 'Build modern websites and web applications with cutting-edge technologies.',
         details: ['HTML, CSS, JavaScript mastery', 'React and Node.js development', 'Database design and integration', 'Portfolio project creation'],
-        imageUrl: 'https://picsum.photos/seed/webdev/400/250',
+        imageUrl: '/course-image/web-development-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -128,7 +128,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-600',
         description: 'Master data analysis tools and techniques for informed decision making.',
         details: ['Python and R programming', 'Statistical analysis methods', 'Data visualization tools', 'Machine learning basics'],
-        imageUrl: 'https://picsum.photos/seed/data/400/250',
+        imageUrl: '/course-image/data-analytics-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -139,7 +139,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-red-500',
         description: 'Protect digital assets with comprehensive cybersecurity knowledge.',
         details: ['Network security fundamentals', 'Ethical hacking techniques', 'Risk assessment and management', 'Industry certification prep'],
-        imageUrl: 'https://picsum.photos/seed/cybersecurity/400/250',
+        imageUrl: '/course-image/cybersecurity-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -150,7 +150,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: 'Master in-demand programming languages and software development methodologies.',
         details: ['Data Structures & Algorithms', 'Full-Stack Development', 'Cloud Computing basics', 'Portfolio building with real projects'],
-        imageUrl: 'https://picsum.photos/seed/cs-tp/400/250',
+        imageUrl: '/course-image/computer-science-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -161,7 +161,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-purple-600',
         description: 'Dive into the world of artificial intelligence, machine learning, and data analytics with expert guidance.',
         details: ['Python for Data Science', 'Machine Learning models', 'Deep Learning concepts', 'Industry-relevant case studies'],
-        imageUrl: 'https://picsum.photos/seed/aiml-tp/400/250',
+        imageUrl: '/course-image/ai-ml-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -172,7 +172,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: 'Master English with comprehensive grammar, vocabulary, and conversation skills.',
         details: ['IELTS/TOEFL preparation', 'Business English communication', 'Interactive speaking sessions', 'Writing and grammar mastery'],
-        imageUrl: 'https://picsum.photos/seed/english/400/250',
+        imageUrl: '/course-image/english-prof-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -183,7 +183,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-red-500',
         description: 'Master the art of expression and confidence through engaging sessions.',
         details: ['Story crafting and narrative design', 'Stage performance and articulation', 'Speech structure and delivery', 'Real-world communication practice'],
-        imageUrl: 'https://picsum.photos/seed/writing/400/250',
+        imageUrl: '/course-image/creative-writing-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
 
@@ -196,7 +196,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-500',
         description: 'Build a strong academic foundation in all subjects for middle school students.',
         details: ['Mathematics & Science focus', 'English & Social Studies', 'Interactive learning sessions', 'Regular assessments'],
-        imageUrl: 'https://picsum.photos/seed/middle-school/400/250',
+        imageUrl: '/course-image/6-8-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -207,7 +207,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-purple-500',
         description: 'Comprehensive coaching for high school subjects to excel in board examinations.',
         details: ['In-depth subject knowledge', 'Board exam preparation', 'Doubt-solving sessions', 'Career counseling'],
-        imageUrl: 'https://picsum.photos/seed/high-school/400/250',
+        imageUrl: '/course-image/9-10-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -218,7 +218,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-indigo-500',
         description: 'Specialized coaching for Science, Commerce, and Arts streams for senior secondary students.',
         details: ['Stream-specific expert faculty', 'Competitive exam foundation', 'Practical and lab work', 'Personalized attention'],
-        imageUrl: 'https://picsum.photos/seed/senior-secondary/400/250',
+        imageUrl: '/course-image/11-12-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
 
@@ -231,7 +231,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-blue-600',
         description: "Comprehensive preparation for one of India's most prestigious examinations.",
         details: ['GS Prelims & Mains coverage', 'Optional subject guidance', 'Current Affairs analysis', 'Mock tests and interview prep'],
-        imageUrl: 'https://picsum.photos/seed/upsc/400/250',
+        imageUrl: '/course-image/upsc-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -242,7 +242,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-green-600',
         description: 'Target various government jobs with structured coaching for SSC CGL, CHSL, and more.',
         details: ['Quantitative Aptitude', 'Reasoning & General Intelligence', 'English Language', 'General Awareness'],
-        imageUrl: 'https://picsum.photos/seed/ssc/400/250',
+        imageUrl: '/course-image/ssc-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -253,7 +253,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-red-500',
         description: 'Prepare for state-level public service commission examinations with tailored study material.',
         details: ['State-specific GK', 'Syllabus-oriented classes', 'Previous year paper analysis', 'Expert faculty guidance'],
-        imageUrl: 'https://picsum.photos/seed/psc/400/250',
+        imageUrl: '/course-image/state-psc-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
 
@@ -266,7 +266,7 @@ export const allCourses = [
         borderColorHover: 'hover:border-orange-500',
         description: 'Crack the Joint Entrance Examination for admission to top engineering colleges in India.',
         details: ['Physics, Chemistry, Maths', 'Problem-solving workshops', 'Regular mock tests', 'Personalized doubt clearing'],
-        imageUrl: 'https://picsum.photos/seed/jee/400/250',
+        imageUrl: '/course-image/jee-main-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
     {
@@ -277,10 +277,8 @@ export const allCourses = [
         borderColorHover: 'hover:border-pink-500',
         description: 'Prepare for the National Eligibility cum Entrance Test for medical and dental courses.',
         details: ['Physics, Chemistry, Biology', 'NCERT-focused curriculum', 'Time management strategies', 'All India Test Series'],
-        imageUrl: 'https://picsum.photos/seed/neet/400/250',
+        imageUrl: '/course-image/neet-min.png',
         brochureLink: 'https://docs.google.com/document/d/1Balsy2w-vA2i_g_2j_2L5A4S7s_7f9F/edit?usp=sharing&ouid=106316102379361254399&rtpof=true&sd=true',
     },
-
-    // Language Courses
 
 ];

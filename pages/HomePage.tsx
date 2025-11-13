@@ -19,24 +19,24 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
 
   const slides = [
     {
-      image: 'https://picsum.photos/seed/slider1/1440/800',
-      mobileImage: 'https://picsum.photos/seed/slider1/800/800',
+      image: '/banner-image/banner-courses-min.png',
+      mobileImage: '/banner-image/banner-courses-square-min.png',
       action: () => handleNavigation('courses'),
     },
     {
-      image: 'https://picsum.photos/seed/slider2/1440/800',
-      mobileImage: 'https://picsum.photos/seed/slider2/800/800',
+      image: '/banner-image/banner-training-min.png',
+      mobileImage: '/banner-image/banner-training-square-min.png',
       action: () => handleCategorySelect('training_placement'),
     },
     {
-      image: 'https://picsum.photos/seed/slider3/1440/800',
-      mobileImage: 'https://picsum.photos/seed/slider3/800/800',
-      action: () => handleNavigation('contact'),
+      image: '/banner-image/banner-team-min.png',
+      mobileImage: '/banner-image/banner-team-square-min.png',
+      action: () => handleNavigation('team'),
     },
     {
-      image: 'https://picsum.photos/seed/slider4/1440/800',
-      mobileImage: 'https://picsum.photos/seed/slider4/800/800',
-      action: () => handleNavigation('home', 'about'),
+      image: '/banner-image/banner-about-us-min.png',
+      mobileImage: '/banner-image/banner-about-us-square-min.png',
+      action: () => handleNavigation('about'),
     },
   ];
 
@@ -150,7 +150,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white'
               }`}
               aria-label={`Go to slide ${index + 1}`}
