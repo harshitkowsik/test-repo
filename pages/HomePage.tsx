@@ -19,15 +19,16 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
 
   const slides = [
     {
-      image: '/banner-image/banner-courses-min.png',
-      mobileImage: '/banner-image/banner-courses-square-min.png',
-      action: () => handleNavigation('courses'),
-    },
-    {
       image: '/banner-image/banner-training-min.png',
       mobileImage: '/banner-image/banner-training-square-min.png',
       action: () => handleCategorySelect('training_placement'),
     },
+    {
+      image: '/banner-image/banner-courses-min.png',
+      mobileImage: '/banner-image/banner-courses-square-min.png',
+      action: () => handleNavigation('courses'),
+    },
+    
     {
       image: '/banner-image/banner-team-min.png',
       mobileImage: '/banner-image/banner-team-square-min.png',
