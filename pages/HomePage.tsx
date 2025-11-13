@@ -113,17 +113,18 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 index === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
               }`}
             >
-              <img
-                src={slide.image}
-                srcSet={`${slide.mobileImage} 800w, ${slide.image} 1440w`}
-                sizes="(max-width: 767px) 100vw, 1440px"
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover cursor-pointer"
-                onClick={slide.action}
-                aria-label={`Slide ${index + 1}`}
-                role="button"
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcSet={slide.mobileImage} />
+                <source media="(min-width: 768px)" srcSet={slide.image} />
+                <img
+                  src={slide.image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={slide.action}
+                  aria-label={`Slide ${index + 1}`}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </picture>
             </div>
           ))}
         </div>
