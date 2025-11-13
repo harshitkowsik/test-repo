@@ -28,7 +28,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
       mobileImage: '/banner-image/banner-courses-square-min.png',
       action: () => handleNavigation('courses'),
     },
-    
+
     {
       image: '/banner-image/banner-team-min.png',
       mobileImage: '/banner-image/banner-team-square-min.png',
@@ -67,9 +67,9 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
   const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
-  
-  
-  
+
+
+
   useEffect(() => {
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
 
@@ -110,9 +110,8 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
             >
               <picture>
                 <source media="(max-width: 767px)" srcSet={slide.mobileImage} />
@@ -129,7 +128,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             </div>
           ))}
         </div>
-        
+
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
@@ -152,12 +151,65 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white'
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
+        </div>
+      </section>
+
+
+
+      {/* What We Offer Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+              What We Offer
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Comprehensive courses designed to meet your learning goals and
+              career aspirations.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {courseCategories.slice(0, 4).map((category, index) => {
+              const buttonColorClasses: { [key: string]: string } = {
+                'text-purple-500': 'text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300',
+                'text-orange-500': 'text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300',
+                'text-green-500': 'text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300',
+                'text-red-500': 'text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300',
+                'text-indigo-500': 'text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300',
+                'text-blue-500': 'text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300',
+              };
+              const buttonColors = buttonColorClasses[category.color] || 'text-gray-600 dark:text-gray-400';
+
+              return (
+                <div
+                  key={category.id}
+                  className={`reveal bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 ease-out opacity-0 translate-y-6 border border-transparent ${category.borderColorHover} flex flex-col`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <div className={`text-4xl ${category.color} mb-4`}>
+                    <i className={category.icon}></i>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                    {category.description}
+                  </p>
+                  <button
+                    onClick={() => handleCategorySelect(category.id)}
+                    className={`rounded-button whitespace-nowrap cursor-pointer ${buttonColors} font-semibold mt-auto self-start`}
+                  >
+                    Learn More <i className="fas fa-arrow-right ml-2"></i>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -186,7 +238,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 experience and proven teaching expertise.
               </p>
             </div>
-            <div className="reveal p-8 rounded-lg hover:shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-6" style={{transitionDelay: '100ms'}}>
+            <div className="reveal p-8 rounded-lg hover:shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-6" style={{ transitionDelay: '100ms' }}>
               <div className="text-5xl text-blue-600 mb-4">
                 <i className="fas fa-clock"></i>
               </div>
@@ -198,7 +250,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 interactive learning modules.
               </p>
             </div>
-            <div className="reveal p-8 rounded-lg hover:shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-6" style={{transitionDelay: '200ms'}}>
+            <div className="reveal p-8 rounded-lg hover:shadow-2xl transition-all duration-500 ease-out opacity-0 translate-y-6" style={{ transitionDelay: '200ms' }}>
               <div className="text-5xl text-purple-500 mb-4">
                 <i className="fas fa-certificate"></i>
               </div>
@@ -210,58 +262,6 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 validate your skills.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What We Offer Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-              What We Offer
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Comprehensive courses designed to meet your learning goals and
-              career aspirations.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {courseCategories.slice(0, 4).map((category, index) => {
-               const buttonColorClasses: { [key: string]: string } = {
-                'text-purple-500': 'text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300',
-                'text-orange-500': 'text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300',
-                'text-green-500': 'text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300',
-                'text-red-500': 'text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300',
-                'text-indigo-500': 'text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'text-blue-500': 'text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300',
-              };
-              const buttonColors = buttonColorClasses[category.color] || 'text-gray-600 dark:text-gray-400';
-              
-              return (
-              <div 
-                  key={category.id}
-                  className={`reveal bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 ease-out opacity-0 translate-y-6 border border-transparent ${category.borderColorHover} flex flex-col`} 
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className={`text-4xl ${category.color} mb-4`}>
-                    <i className={category.icon}></i>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {category.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-                    {category.description}
-                  </p>
-                  <button
-                    onClick={() => handleCategorySelect(category.id)}
-                    className={`rounded-button whitespace-nowrap cursor-pointer ${buttonColors} font-semibold mt-auto self-start`}
-                  >
-                    Learn More <i className="fas fa-arrow-right ml-2"></i>
-                  </button>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -411,13 +411,11 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                     {[...Array(5)].map((_, i) => (
                       <i
                         key={i}
-                        className={`fas fa-star ${
-                          i < testimonial.stars ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-500'
-                        } ${
-                          testimonial.stars % 1 !== 0 && i === Math.floor(testimonial.stars)
+                        className={`fas fa-star ${i < testimonial.stars ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-500'
+                          } ${testimonial.stars % 1 !== 0 && i === Math.floor(testimonial.stars)
                             ? 'fa-star-half-alt'
                             : ''
-                        }`}
+                          }`}
                       ></i>
                     ))}
                   </div>
@@ -494,7 +492,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 </div>
               </div>
             </div>
-            <div className="relative reveal opacity-0 translate-y-6 duration-500" style={{transitionDelay: '200ms'}}>
+            <div className="relative reveal opacity-0 translate-y-6 duration-500" style={{ transitionDelay: '200ms' }}>
               <img
                 src="https://cdn.pixabay.com/photo/2021/02/09/10/57/building-5998180_640.jpg"
                 alt="LearnSpire Campus"
