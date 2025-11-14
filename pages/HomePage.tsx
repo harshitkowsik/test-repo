@@ -283,7 +283,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                        before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-white dark:before:from-gray-800 before:to-transparent before:content-['']
                        after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-white dark:after:from-gray-800 after:to-transparent after:content-['']"
           >
-            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center py-4" style={{ animationDuration: '80s' }}>
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center py-4" style={{ animationDuration: '40s'}}>
               {[...hiringPartners, ...hiringPartners].map((partner, index) => (
                 <div key={index} className="w-40 h-20 md:w-48 md:h-24 mx-6 flex-shrink-0 flex items-center justify-center">
                   <img
