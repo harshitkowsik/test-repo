@@ -283,7 +283,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                        before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-white dark:before:from-gray-800 before:to-transparent before:content-['']
                        after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-white dark:after:from-gray-800 after:to-transparent after:content-['']"
           >
-            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center py-4">
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center py-4" style={{ animationDuration: '80s' }}>
               {[...hiringPartners, ...hiringPartners].map((partner, index) => (
                 <div key={index} className="w-40 h-20 md:w-48 md:h-24 mx-6 flex-shrink-0 flex items-center justify-center">
                   <img
@@ -385,7 +385,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                        before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-16 md:before:w-24 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
                        after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-16 md:after:w-24 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
           >
-            <div className="flex mb-5 w-max animate-scroll hover:[animation-play-state:paused]">
+            <div className="flex mb-5 w-max animate-scroll hover:[animation-play-state:paused]" style={{ animationDuration: '80s' }}>
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div key={index} className="w-80 md:w-96 mx-4 flex-shrink-0 bg-white dark:bg-gray-700/50 p-8 rounded-lg shadow-lg">
                   <div className="flex items-center mb-4">
@@ -442,7 +442,10 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                        before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-12 md:before:w-16 before:bg-gradient-to-r before:from-gray-50 dark:before:from-gray-900 before:to-transparent before:content-['']
                        after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-12 md:after:w-16 after:bg-gradient-to-l after:from-gray-50 dark:after:from-gray-900 after:to-transparent after:content-['']"
           >
-            <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+            <div
+              className="flex w-max animate-scroll hover:[animation-play-state:paused]"
+              style={{ animationDuration: '150s' }}
+            >
               {[...galleryImages, ...galleryImages].map((img, index) => (
                 <div key={index} className="w-80 md:w-96 h-56 md:h-64 mx-4 flex-shrink-0">
                   <img
@@ -494,7 +497,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
             </div>
             <div className="relative reveal opacity-0 translate-y-6 duration-500" style={{ transitionDelay: '200ms' }}>
               <img
-                src="https://cdn.pixabay.com/photo/2021/02/09/10/57/building-5998180_640.jpg"
+                src="/image-gallary/slide-image1.jpeg"
                 alt="LearnSpire Campus"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
