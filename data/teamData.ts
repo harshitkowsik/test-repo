@@ -3,7 +3,7 @@ export const teamMembers = [
     {
         name: 'Ankit Pandey',
         designation: 'Training and Placement Manager',
-        bio: 'Ankit is a dedicated professional with extensive experience in career counseling and corporate relations. He plays a pivotal role in bridging the gap between students and the industry.',
+        bio: 'With over 12 years of experience in career counseling and corporate relations, Ankit plays a pivotal role in bridging the gap between students and the industry, ensuring our learners are well-prepared for their professional journeys.',
         imageUrl: '/team-data/ankit-pandey.jpeg',
         twitterUrl: '#',
         linkedinUrl: '#',
@@ -11,7 +11,7 @@ export const teamMembers = [
      {
         name: 'Vinay Singh',
         designation: 'Senior Training Officer (Pharma)',
-        bio: 'Vinay with a deep understanding of the pharmaceutical industry, Vinay leads our pharma training programs, delivering high-quality, industry-relevant education to aspiring professionals.',
+        bio: 'Bringing 22 years of deep industry knowledge, Vinay leads our pharma training programs. He is dedicated to delivering high-quality, industry-relevant education to aspiring pharmaceutical professionals.',
         imageUrl: '/team-data/vinay-singh.jpeg',
         twitterUrl: '#',
         linkedinUrl: '#',
@@ -19,7 +19,7 @@ export const teamMembers = [
      {
         name: 'Vipul Soni',
         designation: 'Head of T&P Department (Pharma)',
-        bio: 'Vipul heads the Training and Placement department for our pharmaceutical courses. His strategic vision and strong industry connections have enabled countless students to secure placements.',
+        bio: 'As the Head of the Pharma T&P Department, Vipul leverages his strategic vision and strong industry connections to help countless students secure placements in leading pharmaceutical companies.',
         imageUrl: '/team-data/vipul-soni.jpeg',
         twitterUrl: '#',
         linkedinUrl: '#',
@@ -27,11 +27,25 @@ export const teamMembers = [
      {
         name: 'Sujit Kumar Sharma',
         designation: 'Sales Head',
-        bio: 'Sujit leads our sales and outreach initiatives. His expertise in strategic marketing helps connect aspiring learners with the right courses, driving the growth and success of LearnSpire.',
+        bio: 'Sujit leads our sales and outreach initiatives with expertise in strategic marketing. He is passionate about connecting aspiring learners with the right courses to help them achieve their career goals and drive LearnSpire\'s growth.',
         imageUrl: '/team-data/sujit-kumar-sharma.jpeg',
         twitterUrl: '#',
         linkedinUrl: '#',
     },
-
-
+    {
+        name: 'Dr. Abhishek Kumar',
+        designation: 'Overseas Mentor',
+        bio: 'Based in California, USA, Dr. Kumar brings 12 years of international experience. As our Overseas Mentor, he provides global insights and guidance to students aspiring to build a career abroad.',
+        imageUrl: '/team-data/abhishek-kumar.jpeg',
+        twitterUrl: '#',
+        linkedinUrl: '#',
+    },
+     {
+        name: 'Prabhakar Dwivedi',
+        designation: 'Academic Head',
+        bio: 'With 15 years of experience in education, Prabhakar leads our academic department. He is committed to maintaining the highest standards of curriculum and instruction to ensure student success.',
+        imageUrl: '/team-data/prabhakar-dwivedi.jpeg',
+        twitterUrl: '#',
+        linkedinUrl: '#',
+    },
 ];
