@@ -9,7 +9,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ handleCategorySelect }) => {
   return (
 
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -148,18 +148,27 @@ const Footer: React.FC<FooterProps> = ({ handleCategorySelect }) => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 LearnSpire. All rights reserved. |{" "}
+            © {new Date().getFullYear()} LearnSpire. All rights reserved. |{" "}
             <Link
               to="/privacy"
               className="text-gray-400 hover:text-green-400 transition-colors duration-300"
             >
               Privacy Policy
             </Link>{" "}
-            |{" "}
+            | {" "}
             <Link
               to="/terms"
               className="text-gray-400 hover:text-green-400 transition-colors duration-300"
             >Terms of Service</Link>
+          </p>
+          <p className="text-gray-500 text-sm mt-4">
+            Developed by{" "}
+            <a
+              href="https://harshitkowsik.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400 transition-colors"
+            >Harshit Kowsik</a>
           </p>
         </div>
       </div>

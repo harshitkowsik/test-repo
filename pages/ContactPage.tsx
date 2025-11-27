@@ -46,10 +46,10 @@ const ContactPage: React.FC = () => {
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
             <div className="container mx-auto px-6 py-12">
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+                    <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
                         Get in Touch
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                         We'd love to hear from you! Whether you have a question about our courses, partnerships, or anything else, our team is ready to answer all your questions.
                     </p>
                 </div>

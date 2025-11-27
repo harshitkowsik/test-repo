@@ -160,13 +160,13 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
 
 
       {/* What We Offer Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-10 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               What We Offer
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Comprehensive courses designed to meet your learning goals and
               career aspirations.
             </p>
@@ -221,13 +221,13 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
       </section>
 
       {/* Why LearnSpire Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-10 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               Why Choose LearnSpire?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               We provide world-class education with innovative teaching methods
               and personalized learning experiences.
             </p>
@@ -275,13 +275,13 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
 
 
       {/* Hiring Partners Section (New) */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-10 bg-white dark:bg-gray-800">
         <div className="container mx-auto">
           <div className="text-center mb-16 px-6">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               Our Esteemed Hiring Partners
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               We collaborate with leading companies to ensure excellent placement opportunities for our students.
             </p>
           </div>
@@ -308,13 +308,13 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
 
 
       {/* Meet Our Team Section (New) */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-10 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               Meet Our Expert Team
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Committed to your success, our team brings expertise and passion to education.
             </p>
           </div>
@@ -377,13 +377,13 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
 
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-10 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto">
           <div className="text-center mb-16 px-6">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               What Our Students Say
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
               Hear from learners who transformed their careers with LearnSpire
             </p>
           </div>
@@ -440,7 +440,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
               Glimpses of LearnSpire
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               A vibrant and engaging learning environment designed for success.
             </p>
           </div>
