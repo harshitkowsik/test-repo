@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Page, CourseCategory } from '../types';
+import { Link, useNavigate } from 'react-router-dom';
+import { CourseCategory } from '../types';
 import { courseCategories } from '../data/courses';
 import { teamMembers } from '../data/teamData';
 import { testimonials } from '../data/testData';
@@ -8,14 +8,13 @@ import { hiringPartners } from '../data/hiringPartners';
 import { galleryImages } from '../data/gallaryData';
 
 interface HomePageProps {
-  handleNavigation: (page: Page, anchor?: string) => void;
   handleCategorySelect: (category: CourseCategory) => void;
 }
 
-const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySelect }) => {
+const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // FIX: Use ReturnType<typeof setTimeout> for browser compatibility instead of NodeJS.Timeout
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -26,18 +25,17 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
     {
       image: '/banner-image/banner-courses-min.png',
       mobileImage: '/banner-image/banner-courses-square-min.png',
-      action: () => handleNavigation('courses'),
+      action: () => navigate('/courses'),
     },
-
     {
       image: '/banner-image/banner-team-min.png',
       mobileImage: '/banner-image/banner-team-square-min.png',
-      action: () => handleNavigation('team'),
+      action: () => navigate('/team'),
     },
     {
       image: '/banner-image/banner-about-us-min.png',
       mobileImage: '/banner-image/banner-about-us-square-min.png',
-      action: () => handleNavigation('about'),
+      action: () => navigate('/about'),
     },
   ];
 
@@ -53,7 +51,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
 
   useEffect(() => {
     resetTimeout();
-    timeoutRef.current = setTimeout(nextSlide, 5000);
+    timeoutRef.current = setTimeout(nextSlide, 4000);
 
     return () => {
       resetTimeout();
@@ -102,7 +100,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
         onMouseEnter={() => resetTimeout()}
         onMouseLeave={() => {
           resetTimeout();
-          timeoutRef.current = setTimeout(nextSlide, 5000);
+          timeoutRef.current = setTimeout(nextSlide, 3000);
         }}
       >
         {/* Background Image Slider */}
@@ -209,6 +207,15 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
                 </div>
               );
             })}
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => navigate('/courses')}
+              className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-8 py-3 font-semibold text-lg transition-colors duration-300"
+              aria-label="View all courses"
+            >
+              View All Courses
+            </button>
           </div>
         </div>
       </section>
@@ -358,7 +365,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleNavigation, handleCategorySel
           </div>
           <div className="text-center mt-12">
             <button
-              onClick={() => handleNavigation('team')}
+              onClick={() => navigate('/team')}
               className="rounded-button whitespace-nowrap cursor-pointer bg-green-500 hover:bg-green-600 text-white px-8 py-3 font-semibold text-lg transition-colors duration-300"
               aria-label="View all team members"
             >

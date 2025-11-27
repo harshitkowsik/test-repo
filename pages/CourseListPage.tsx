@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Page, CourseCategory } from '../types';
+import { Link } from 'react-router-dom';
+import { CourseCategory } from '../types';
 import { allCourses, courseCategories } from '../data/courses';
-import BrochureModal from '../components/BrochureModal.tsx';
+import BrochureModal from '../components/BrochureModal';
 
 interface CourseListPageProps {
   category: CourseCategory | null;
   handleCourseEnroll: (courseName: string) => void;
-  handleNavigation: (page: Page) => void;
 }
 
-const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseEnroll, handleNavigation }) => {
+const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseEnroll }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourseForBrochure, setSelectedCourseForBrochure] = useState<any | null>(null);
 
@@ -27,12 +27,12 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
             <p className="text-red-500">No course category selected.</p>
-            <button
-                onClick={() => handleNavigation('courses')}
+            <Link
+                to="/courses"
                 className="ml-4 rounded-button bg-green-500 text-white px-4 py-2"
             >
                 Go Back
-            </button>
+            </Link>
         </div>
     );
   }
@@ -42,15 +42,15 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 ">
         <div className="mb-12">
-            <button
-                onClick={() => handleNavigation('courses')}
+            <Link
+                to="/courses"
                 className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-semibold mb-8 flex items-center md: mt-10 "
             >
                 <i className="fas fa-arrow-left mr-2"></i>
                 Back to Categories
-            </button>
+            </Link>
             <div className="text-center">
                 <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
                     {categoryDetails?.title}

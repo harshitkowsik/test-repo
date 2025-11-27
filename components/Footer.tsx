@@ -1,14 +1,14 @@
-
 import React from 'react';
-import { Page, CourseCategory } from '../types';
+import { Link, useNavigate } from 'react-router-dom';
+import { CourseCategory, Theme } from '../types';
 
 interface FooterProps {
-  handleNavigation: (page: Page, anchor?: string) => void;
   handleCategorySelect: (category: CourseCategory) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect }) => {
+const Footer: React.FC<FooterProps> = ({ handleCategorySelect }) => {
   return (
+
     <footer className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -31,36 +31,40 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect 
             <h4 className="text-lg font-semibold mb-4">Popular Courses</h4>
             <ul className="space-y-2">
               <li>
-                <button
+                <Link
+                  to="/courses/list"
                   onClick={() => handleCategorySelect('training_placement')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                 >
                   Training & Placement
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/courses/list"
                   onClick={() => handleCategorySelect('professional')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                 >
                   Professional & Job-Oriented
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/courses/list"
                   onClick={() => handleCategorySelect('academics')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                 >
                   Academic Courses
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  to="/courses/list"
                   onClick={() => handleCategorySelect('language')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300 text-left"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                 >
                   Language Courses
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,43 +72,44 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect 
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => handleNavigation("home")}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation("courses")}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
-                >
-                  Courses
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation("feedback")}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
-                >
-                  Feedback
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation('home', 'about')}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300"
+                <Link
+                  to="/about"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                 >
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigation("contact")}
-                  className="cursor-pointer text-gray-400 hover:text-green-400 transition-colors duration-300">
+                <Link
+                  to="/courses"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                >
+                  Courses
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/team"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                >
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                >
                   Contact
-                </button>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/feedback"
+                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                >
+                  Feedback
+                </Link>
               </li>
             </ul>
           </div>
@@ -144,17 +149,17 @@ const Footer: React.FC<FooterProps> = ({ handleNavigation, handleCategorySelect 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
             © 2025 LearnSpire. All rights reserved. |{" "}
-            <button
-              onClick={() => handleNavigation("privacy")}
+            <Link
+              to="/privacy"
               className="text-gray-400 hover:text-green-400 transition-colors duration-300"
             >
               Privacy Policy
-            </button>{" "}
+            </Link>{" "}
             |{" "}
-            <button
-              onClick={() => handleNavigation("terms")}
+            <Link
+              to="/terms"
               className="text-gray-400 hover:text-green-400 transition-colors duration-300"
-            >Terms of Service</button>
+            >Terms of Service</Link>
           </p>
         </div>
       </div>

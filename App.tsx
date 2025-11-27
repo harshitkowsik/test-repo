@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
-import { Page, FormDataState, Theme, CourseCategory } from './types';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { FormDataState, Theme, CourseCategory } from './types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -9,27 +10,27 @@ import RegistrationPage from './pages/RegistrationPage';
 import FeedbackPage from './pages/FeedbackPage';
 import CourseListPage from './pages/CourseListPage';
 import ContactPage from './pages/ContactPage';
-import TermsAndConditionsPage from './pages/TermsAndConditionsPage.tsx';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage.tsx';
-import TeamPage from './pages/TeamPage.tsx';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TeamPage from './pages/TeamPage';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
-  const [selectedCourse, setSelectedCourse] = useState<string>("");
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<CourseCategory | null>(null);
   const [formData, setFormData] = useState<FormDataState>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    course: "",
-    education: "",
-    experience: "",
-    motivation: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    course: '',
+    education: '',
+    experience: '',
+    motivation: '',
   });
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem('theme') as Theme) || 'system'
   );
+  const navigate = useNavigate();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -55,45 +56,15 @@ const App: React.FC = () => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
-  const handleNavigation = (page: Page, anchor?: string) => {
-    if (page === 'about') {
-      setCurrentPage('home');
-      setTimeout(() => {
-        const id = anchor || 'about';
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }, 60);
-      return;
-    }
-
-    setCurrentPage(page);
-
-    if (page === 'home' && anchor) {
-      setTimeout(() => {
-        const el = document.getElementById(anchor);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 60);
-      return;
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleCategorySelect = (category: CourseCategory) => {
     setSelectedCategory(category);
-    handleNavigation("courseList");
+    navigate('/courses/list');
   };
 
   const handleCourseEnroll = (courseName: string) => {
     setSelectedCourse(courseName);
     setFormData({ ...formData, course: courseName });
-    handleNavigation("registration");
+    navigate('/registration');
   };
 
   const handleInputChange = (
@@ -107,46 +78,6 @@ const App: React.FC = () => {
     });
   };
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />;
-      case "courses":
-        return <CoursesPage handleCategorySelect={handleCategorySelect} />;
-      case "courseList":
-        return (
-          <CourseListPage
-            category={selectedCategory}
-            handleCourseEnroll={handleCourseEnroll}
-            handleNavigation={handleNavigation}
-          />
-        );
-      case "registration":
-        return (
-          <RegistrationPage
-            selectedCourse={selectedCourse}
-            formData={formData}
-            handleInputChange={handleInputChange}
-            handleNavigation={handleNavigation}
-          />
-        );
-      case "feedback":
-        return <FeedbackPage />;
-      case "about":
-         return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />;
-      case "contact":
-         return <ContactPage />;
-      case "terms":
-        return <TermsAndConditionsPage />;
-      case "privacy":
-        return <PrivacyPolicyPage />;
-      case "team":
-        return <TeamPage />;
-      default:
-        return <HomePage handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect}/>;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
        <style>
@@ -157,12 +88,24 @@ const App: React.FC = () => {
         `}
       </style>
 
-      <Navbar currentPage={currentPage} handleNavigation={handleNavigation} theme={theme} setTheme={setTheme} />
+      <Navbar theme={theme} setTheme={setTheme} handleCategorySelect={handleCategorySelect} selectedCategory={selectedCategory} />
       <main className="pt-16">{/* Add padding top to account for fixed navbar */}</main>
-      {renderPage()}
-      <Footer handleNavigation={handleNavigation} handleCategorySelect={handleCategorySelect} />
+      <Routes>
+        <Route path="/" element={<HomePage handleCategorySelect={handleCategorySelect} />} />
+        <Route path="/courses" element={<CoursesPage handleCategorySelect={handleCategorySelect} />} />
+        <Route path="/courses/list" element={<CourseListPage category={selectedCategory} handleCourseEnroll={handleCourseEnroll} />} />
+        <Route path="/registration" element={<RegistrationPage selectedCourse={selectedCourse} formData={formData} handleInputChange={handleInputChange} />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/terms" element={<TermsAndConditionsPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/about" element={<HomePage handleCategorySelect={handleCategorySelect} />} />
+      </Routes>
+      <Footer handleCategorySelect={handleCategorySelect} />
     </div>
   );
 };
+
 
 export default App;

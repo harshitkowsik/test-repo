@@ -13,10 +13,9 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ theme, setTheme }) => {
   const themeOptions: { value: Theme; label: string; icon: string }[] = [
     { value: 'light', label: 'Light', icon: 'fa-sun' },
     { value: 'dark', label: 'Dark', icon: 'fa-moon' },
-    { value: 'system', label: 'System', icon: 'fa-desktop' },
   ];
 
-  const currentIcon = themeOptions.find(opt => opt.value === theme)?.icon || 'fa-desktop';
+  const currentIcon = theme === 'dark' ? 'fa-moon' : 'fa-sun';
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

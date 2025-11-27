@@ -1,19 +1,17 @@
-
 import React, { useState } from 'react';
-import { Page, FormDataState } from '../types';
+import { Link } from 'react-router-dom';
+import { FormDataState } from '../types';
 
 interface RegistrationPageProps {
   selectedCourse: string;
   formData: FormDataState;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
-  handleNavigation: (page: Page) => void;
 }
 
 const RegistrationPage: React.FC<RegistrationPageProps> = ({
   selectedCourse,
   formData,
   handleInputChange,
-  handleNavigation
 }) => {
   const [status, setStatus] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -178,34 +176,31 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({
                 required />
               <label htmlFor="terms" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
                 I agree to the{" "}
-                <button
-                  type="button"
-                  onClick={() => handleNavigation("terms")}
+                <Link
+                  to="/terms"
                   className="text-green-600 dark:text-green-400 cursor-pointer underline focus:outline-none focus:ring-2 focus:ring-green-500/50"
                   aria-label="Read Terms and Conditions"
                 >
                   Terms and Conditions
-                </button>{" "}
+                </Link>{" "}
                 and{" "}
-                <button
-                  type="button"
-                  onClick={() => handleNavigation("privacy")}
+                <Link
+                  to="/privacy"
                   className="text-green-600 dark:text-green-400 cursor-pointer underline focus:outline-none focus:ring-2 focus:ring-green-500/50"
                   aria-label="Read Privacy Policy"
                 >
                   Privacy Policy
-                </button>
+                </Link>
               </label>
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
-              <button
-                type="button"
-                onClick={() => handleNavigation("courses")}
-                className="rounded-button whitespace-nowrap cursor-pointer w-full md:flex-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white py-3 font-semibold transition-colors duration-300"
+              <Link
+                to="/courses"
+                className="rounded-button whitespace-nowrap text-center cursor-pointer w-full md:flex-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white py-3 font-semibold transition-colors duration-300"
               >
                 Back to Courses
-              </button>
+              </Link>
               <button
                 type="submit"
                 className="rounded-button whitespace-nowrap cursor-pointer w-full md:flex-1 bg-green-500 hover:bg-green-600 text-white py-3 font-semibold transition-colors duration-300 disabled:bg-gray-400"
