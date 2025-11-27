@@ -41,7 +41,7 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
   const categoryDetails = courseCategories.find(c => c.id === category);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-16">
       <div className="container mx-auto px-6 ">
         <div className="mb-12">
             <Link

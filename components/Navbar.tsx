@@ -90,6 +90,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme, selectedCategory, hand
               <Link to="/contact" className={getLinkClass("/contact")}>
                 Contact
               </Link>
+              <Link to="/about" className={getLinkClass("/about")}>
+                About
+              </Link>
               <Link to="/feedback" className={getLinkClass("/feedback")}>
                 Feedback
               </Link>
@@ -127,9 +130,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme, selectedCategory, hand
                     <div className="border-t border-gray-200 dark:border-gray-700 my-1"></div>
                     <div className="flex flex-col">
                       <Link to="/team" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Our Team</Link>
+                      <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About Us</Link>
                       <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
                       <Link to="/feedback" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Feedback</Link>
-                      <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
                     </div>
                     <div className="border-t border-gray-200 dark:border-gray-700 my-2"></div>
                     <Link

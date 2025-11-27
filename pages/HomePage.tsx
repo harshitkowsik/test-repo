@@ -275,7 +275,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
 
 
       {/* Hiring Partners Section (New) */}
-      <section className="py-10 bg-white dark:bg-gray-800">
+      <section className="py-10 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto">
           <div className="text-center mb-16 px-6">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
@@ -296,7 +296,7 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
                   <img
                     src={partner.imageUrl}
                     alt={partner.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 rounded-lg"
                     loading="lazy"
                   />
                 </div>

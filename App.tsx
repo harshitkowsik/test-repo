@@ -13,6 +13,7 @@ import ContactPage from './pages/ContactPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TeamPage from './pages/TeamPage';
+import AboutPage from './pages/AboutPage';
 
 
 const AppContent: React.FC = () => {
@@ -102,7 +103,7 @@ const AppContent: React.FC = () => {
         <Route path="/terms" element={<TermsAndConditionsPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/team" element={<TeamPage />} />
-        <Route path="/about" element={<HomePage handleCategorySelect={handleCategorySelect} />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer handleCategorySelect={handleCategorySelect} />
     </div>
