@@ -14,7 +14,8 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TeamPage from './pages/TeamPage';
 
-const App: React.FC = () => {
+
+const AppContent: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<CourseCategory | null>(null);
   const [formData, setFormData] = useState<FormDataState>({
@@ -87,6 +88,7 @@ const App: React.FC = () => {
           }
         `}
       </style>
+      
 
       <Navbar theme={theme} setTheme={setTheme} handleCategorySelect={handleCategorySelect} selectedCategory={selectedCategory} />
       <main className="pt-16">{/* Add padding top to account for fixed navbar */}</main>
@@ -108,4 +110,4 @@ const App: React.FC = () => {
 };
 
 
-export default App;
+export default AppContent;
