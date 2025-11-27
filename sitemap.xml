@@ -19,6 +19,54 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://learnspire.org/courses/training_placement</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/courses/professional</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/courses/academics</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/courses/competitive_exams</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/courses/entrance_exams</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/courses/language</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/team</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://learnspire.org/feedback</loc>
+    <lastmod>2024-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://learnspire.org/contact</loc>
     <lastmod>2024-09-07</lastmod>
     <changefreq>yearly</changefreq>

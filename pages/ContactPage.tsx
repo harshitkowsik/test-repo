@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SEO from '../SEO';
 
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -44,6 +45,14 @@ const ContactPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <SEO
+                title="Contact Us | LearnSpire"
+                description="Get in touch with LearnSpire. Contact us for questions about courses, partnerships, or any other inquiries. Our team is ready to help you."
+                keywords="contact learnspire, learnspire support, learnspire address, get in touch, customer service"
+                type="website"
+                name="LearnSpire"
+            />
+
             <div className="container mx-auto px-6 py-12">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">

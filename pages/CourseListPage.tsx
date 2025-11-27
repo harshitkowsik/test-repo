@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CourseCategory } from '../types';
 import { allCourses, courseCategories } from '../data/courses';
 import BrochureModal from '../components/BrochureModal';
+import SEO from '../SEO';
 
 interface CourseListPageProps {
   category: CourseCategory | null;
@@ -23,6 +24,8 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
     setSelectedCourseForBrochure(null);
   };
 
+  const categoryDetails = courseCategories.find(c => c.id === category);
+
   if (!category) {
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -38,10 +41,16 @@ const CourseListPage: React.FC<CourseListPageProps> = ({ category, handleCourseE
   }
 
   const filteredCourses = allCourses.filter(course => course.category === category);
-  const categoryDetails = courseCategories.find(c => c.id === category);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-16">
+      <SEO
+        title={`${categoryDetails?.title || 'Courses'} | LearnSpire`}
+        description={`Explore our ${categoryDetails?.title.toLowerCase()} courses. ${categoryDetails?.description}`}
+        keywords={`${categoryDetails?.title}, online courses, learnspire, ${categoryDetails?.id}`}
+        type="website"
+        name="LearnSpire"
+      />
       <div className="container mx-auto px-6 ">
         <div className="mb-12">
             <Link

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SEO from '../SEO';
 
 const FeedbackPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -48,6 +49,14 @@ const FeedbackPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <SEO
+                title="Feedback | LearnSpire"
+                description="We value your feedback. Help us improve our courses and platform by sharing your experience with LearnSpire."
+                keywords="feedback, learnspire review, student feedback, course review, platform improvement"
+                type="website"
+                name="LearnSpire"
+            />
+
             <div className="container mx-auto px-6 py-12">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-12">

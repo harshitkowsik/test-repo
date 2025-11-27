@@ -2,10 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
 import { testimonials } from '../data/testData';
+import SEO from '../SEO';
 
 const AboutPage: React.FC = () => {
   return (
     <div className="bg-white dark:bg-gray-900">
+      <SEO
+        title="About LearnSpire | Our Mission and Expert Team"
+        description="Learn about LearnSpire's mission to provide high-quality, accessible education. Meet our expert team dedicated to empowering learners worldwide."
+        keywords="about learnspire, education mission, online learning platform, expert instructors, learnspire team"
+        type="website"
+        name="LearnSpire"
+      />
+
       {/* About Section */}
       <section id="about" className="py-12 md:py-20 bg-white dark:bg-gray-800 scroll-mt-16">
         <div className="container mx-auto px-6">

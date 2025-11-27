@@ -103,14 +103,6 @@ const Footer: React.FC<FooterProps> = ({ handleCategorySelect }) => {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/feedback"
-                  className="text-gray-400 hover:text-green-400 transition-colors duration-300"
-                >
-                  Feedback
-                </Link>
-              </li>
             </ul>
           </div>
 

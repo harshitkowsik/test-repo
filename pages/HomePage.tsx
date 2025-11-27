@@ -6,6 +6,7 @@ import { teamMembers } from '../data/teamData';
 import { testimonials } from '../data/testData';
 import { hiringPartners } from '../data/hiringPartners';
 import { galleryImages } from '../data/gallaryData';
+import SEO from '../SEO';
 
 interface HomePageProps {
   handleCategorySelect: (category: CourseCategory) => void;
@@ -94,6 +95,14 @@ const HomePage: React.FC<HomePageProps> = ({ handleCategorySelect }) => {
   }, []);
   return (
     <div className="bg-white dark:bg-gray-900">
+      <SEO
+        title="LearnSpire: Online Courses for Professional & Academic Education"
+        description="Explore top-rated online courses at LearnSpire, your premier destination for quality education. We offer professional training, job-oriented skills, academic tutoring for classes 6-12, and expert coaching for competitive exams like UPSC, SSC, JEE, and NEET. Start your educational journey today!"
+        keywords="online courses, education, professional training, academic tutoring, exam prep, UPSC, SSC, JEE, NEET, job-oriented courses, LearnSpire, online learning"
+        type="website"
+        name="LearnSpire"
+      />
+
       {/* Hero Section */}
       <section
         className="mt-0 relative w-full aspect-square md:h-[400px] text-white overflow-hidden -mt-16 group"

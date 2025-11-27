@@ -1,10 +1,18 @@
 
 import React from 'react';
 import { teamMembers } from '../data/teamData';
+import SEO from '../SEO';
 
 const TeamPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+      <SEO
+        title="Our Team | LearnSpire"
+        description="Meet the expert team of educators, technologists, and support staff at LearnSpire who are dedicated to providing the best learning experience."
+        keywords="learnspire team, instructors, educators, expert team, about us"
+        type="website"
+        name="LearnSpire"
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">

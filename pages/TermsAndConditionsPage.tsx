@@ -1,9 +1,17 @@
 
 import React from 'react';
+import SEO from '../SEO';
 
 const TermsAndConditionsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
+      <SEO
+        title="Terms and Conditions | LearnSpire"
+        description="Please read the Terms and Conditions for using the LearnSpire platform and services."
+        keywords="terms and conditions, terms of service, legal, learnspire terms"
+        type="website"
+        name="LearnSpire"
+      />
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 md:p-12">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">

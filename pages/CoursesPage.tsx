@@ -1,6 +1,7 @@
 import React from 'react';
 import { CourseCategory } from '../types';
 import { courseCategories } from '../data/courses';
+import SEO from '../SEO';
 
 interface CoursesPageProps {
   handleCategorySelect: (category: CourseCategory) => void;
@@ -9,6 +10,13 @@ interface CoursesPageProps {
 const CoursesPage: React.FC<CoursesPageProps> = ({ handleCategorySelect }) => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 ">
+      <SEO
+        title="Course Categories | LearnSpire"
+        description="Explore a wide range of course categories at LearnSpire, including professional training, academic courses, and language learning. Find the perfect course to achieve your goals."
+        keywords="course categories, online courses, professional training, academic courses, language courses, job-oriented courses, learnspire"
+        type="website"
+        name="LearnSpire"
+      />
       <div className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">

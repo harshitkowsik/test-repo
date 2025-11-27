@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FormDataState } from '../types';
+import SEO from '../SEO';
 
 interface RegistrationPageProps {
   selectedCourse: string;
@@ -46,6 +47,13 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title={`Register for ${selectedCourse || 'Course'} | LearnSpire`}
+        description={`Enroll in the ${selectedCourse || 'selected course'} at LearnSpire. Complete your registration to start your learning journey.`}
+        keywords={`course registration, enroll, ${selectedCourse}, learnspire registration`}
+        type="website"
+        name="LearnSpire"
+      />
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
